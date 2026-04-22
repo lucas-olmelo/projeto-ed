@@ -1,4 +1,4 @@
-"""# Projeto de Análise de Algoritmos (Estrutura de Dados)
+# Projeto de Análise de Algoritmos (Estrutura de Dados)
 
 Este projeto tem como objetivo a implementação, instrumentação e análise estatística de diversos algoritmos de ordenação e busca em C++. O sistema gera diferentes cenários de dados para testar a eficiência dos algoritmos em termos de tempo e uso de recursos.
 
@@ -71,4 +71,3 @@ O projeto utiliza o **CMake** para gerenciar a compilação.
 ## ⚙️ Requisitos
 * Compilador C++ com suporte ao padrão **C++17** (GCC 7+, Clang 5+, ou MSVC 2017+).
 * CMake 3.10 ou superior.
-"""

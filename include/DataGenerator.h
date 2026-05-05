@@ -2,7 +2,6 @@
 #define DataGenerator_H
 
 #include <vector>
-#include <random>
 
 class GeradorDeVetor {
 private:

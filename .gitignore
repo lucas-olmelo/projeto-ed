@@ -18,3 +18,4 @@ Makefile
 # Arquivos de sistema operacional (Mac/Windows)
 .DS_Store
 Thumbs.db
+src/main.cpp

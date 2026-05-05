@@ -15,6 +15,10 @@ public:
     static std::vector<int> gerarValoresOrdenados(int tamanho, bool reverse);
     //Método 3: Vetor parcialmente ordenado
     static std::vector<int> gerarValoresParcialmenteOrdenados(int tamanho);
+    //Método 4: Vetor com alta repetição
+    static std::vector<int> gerarValoresAltamenteRepetidos(int tamanho);
+    //Método 5: Vetor com Distribuição Gaussiana
+    static std::vector<int> gerarValoresComDistribuicaoGaussiana(int tamanho, double media, double desvioPadrao);
 };
 
 #endif

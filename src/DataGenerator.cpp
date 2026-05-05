@@ -53,3 +53,29 @@ vector<int> GeradorDeVetor::gerarValoresParcialmenteOrdenados(int tamanho) {
     
     return vetorParcialmenteOrdenado;
 }
+
+vector<int> GeradorDeVetor::gerarValoresAltamenteRepetidos(int tamanho){
+
+    vector<int> vetorAltamenteRepetido(tamanho);
+
+    uniform_int_distribution<int> dist(0, tamanho * 0.2);
+
+    for (int& i : vetorAltamenteRepetido) {
+        i = dist(gerador);
+    }
+
+    return vetorAltamenteRepetido;
+}
+
+vector<int> GeradorDeVetor::gerarValoresComDistribuicaoGaussiana(int tamanho, double media, double desvioPadrao){
+
+    vector<int> vetorDistGaussiana(tamanho);
+
+    std::normal_distribution<double> dist(media, desvioPadrao);
+
+    for (int& i : vetorDistGaussiana) {
+        i = dist(gerador);
+    }
+
+    return vetorDistGaussiana;
+}

@@ -4,7 +4,10 @@
 
 using namespace std;
 
-mt19937 GeradorDeVetor::gerador(std::random_device{}());
+const int SEED = 42;
+
+//mt19937 GeradorDeVetor::gerador(std::random_device{}());
+mt19937 GeradorDeVetor::gerador(SEED);
 
 vector<int> GeradorDeVetor::gerarValoresAleatorios(int tamanho) {
     vector<int> vetorAleatorio(tamanho);

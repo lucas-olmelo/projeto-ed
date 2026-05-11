@@ -109,7 +109,6 @@ void ExperimentRunner::saveMetricsToCSV(
 {
     std::filesystem::path caminhoArquivo(nomeArquivo);
     if (caminhoArquivo.has_parent_path()) {
-        // Cria a árvore de diretórios se ela não existir
         std::filesystem::create_directories(caminhoArquivo.parent_path());
     }
 

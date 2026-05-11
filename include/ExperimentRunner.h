@@ -29,7 +29,7 @@ public:
         const std::string& nomeAlgoritmo,
         const std::string& nomeCenario,
         SearchFunction algoritmo,
-        std::vector<int>& vetorBase, // Vetor já gerado
+        std::vector<int>& vetorBase,
         int valorBusca,
         int numExecucoes = 30
     );

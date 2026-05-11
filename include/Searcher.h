@@ -6,10 +6,10 @@
 
 class Searcher {
 public:
-    /** Retorna referência às métricas da última execução. */
+    //Retorna referência às métricas da última execução.
     const Metrics& getMetrics() const;
 
-    /** Retorna cópia das métricas — use no ExperimentRunner para guardar resultados. */
+    //Retorna cópia das métricas
     Metrics copyMetrics() const;
 
     //Método 1: Busca Sequencial
@@ -21,7 +21,7 @@ private:
 
     inline void countComparison() {
         metrics_.comparisons++;
-        metrics_.memAccesses += 2;  // leu dois elementos
+        metrics_.memAccesses += 2;
     }
 };
 #endif

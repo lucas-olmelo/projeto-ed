@@ -11,7 +11,6 @@
 #include "Sorter.h"
 #include "Searcher.h"
 
-// No seu main.cpp ou em um cabeçalho de config
 struct AlgoritmoOrdenacaoConfig {
     std::string nome;
     std::function<void(Sorter&, std::vector<int>&)> func;
@@ -86,8 +85,7 @@ int main() {
 
     //Definição dos Tamanhos
     //std::vector<int> tamanhos = {1000, 5000, 10000, 50000, 100000, 500000, 1000000};
-    //Versão para testes
-    std::vector<int> tamanhos = {1000, 5000, 10000};
+    std::vector<int> tamanhos = {1000, 5000, 10000}; //Versão para testes
 
     //LOOP DE ORDENAÇÃO
     for (int tamanho : tamanhos) {
@@ -116,7 +114,6 @@ int main() {
 
     // --- LOOP DE BUSCA ---
     for (int tamanho : tamanhos) {
-        // Para buscas justas, o vetor deve estar ordenado e sem repeticoes no pior caso.
         std::vector<int> vetorBusca = GeradorDeVetor::gerarValoresOrdenados(tamanho, false);
 
         // Loop de execução
@@ -135,7 +132,7 @@ int main() {
         }
     }
 
-    std::cout << "\n>>> Todos os experimentos foram concluidos e salvos nos .CSVs." << " <<<\n";
+    std::cout << "\n>>> Todos os experimentos foram concluidos e salvos nos arquivos CSVs <<<\n";
 
     return 0;
 }

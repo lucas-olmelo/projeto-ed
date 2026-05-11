@@ -7,16 +7,15 @@
 /**
  * Sorter
  * ======
- * Implementa e instrumenta os 8 algoritmos de ordenação obrigatórios.
+ * Implementa e instrumenta os 8 algoritmos de ordenação.
  * Cada método ordena o vetor IN-PLACE e registra métricas completas
  * na struct interna `metrics_`.
  *
  * ALGORITMOS IMPLEMENTADOS
  * ------------------------
  *  O(n²)      — Bubble Sort, Insertion Sort, Selection Sort
- *  O(n log n) — Merge Sort, Heap Sort, Shell Sort*
+ *  O(n log n) — Merge Sort, Heap Sort, Shell Sort
  *  O(n log n) — Quick Sort (pivô fixo), Quick Sort randomizado
- *  (* Shell Sort: complexidade depende da sequência de gaps)
  *
  * DESIGN — Metrics como membro
  * -----------------------------

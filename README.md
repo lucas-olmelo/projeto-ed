@@ -47,17 +47,17 @@ Gerencia a complexidade da **PARTE 3** do projeto. Ele automatiza o loop de 30 e
 
 ## 🛠️ Como Compilar e Rodar
 
-    Rodar o comando:
+Rodar os comandos:
 
-    Powershell:
+1.  Powershell:
     ```bash
     g++ -I include src/*.cpp -o programa ; .\programa.exe
     ```
-    CMD:
+2.  CMD:
     ```bash
     g++ -I include src/*.cpp -o programa && programa.exe
     ```
-    Terminal (Mac / Linux)::
+3.  Terminal (Mac / Linux)::
     ```bash
     g++ -I include src/*.cpp -o programa && ./programa
     ```

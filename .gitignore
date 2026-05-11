@@ -7,10 +7,9 @@
 
 # Pastas de build do CMake (MUITO IMPORTANTE)
 build/
-CMakeCache.txt
-CMakeFiles/
-cmake_install.cmake
-Makefile
+
+# Arquivos CSV
+*.csv
 
 # Configurações locais da IDE (VS Code)
 .vscode/

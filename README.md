@@ -7,8 +7,7 @@ Este projeto tem como objetivo a implementação, instrumentação e análise es
 A arquitetura do projeto foi desenhada utilizando Programação Orientada a Objetos para garantir a separação de responsabilidades e facilitar a manutenção.
 
 ```text
-projeto_analise_algoritmos/
-├── CMakeLists.txt        # Roteiro de compilação automatizada
+projeto_ed1/
 ├── README.md             # Documentação do projeto
 ├── .gitignore            # Arquivos ignorados pelo Git (build, exe, etc)
 ├── include/              # Cabeçalhos (.h) - Declarações
@@ -48,26 +47,20 @@ Gerencia a complexidade da **PARTE 3** do projeto. Ele automatiza o loop de 30 e
 
 ## 🛠️ Como Compilar e Rodar
 
-O projeto utiliza o **CMake** para gerenciar a compilação.
+    Rodar o comando:
 
-1.  Crie uma pasta de build:
+    Powershell:
     ```bash
-    mkdir build
-    cd build
+    g++ -I include src/*.cpp -o programa ; .\programa.exe
     ```
-2.  Gere os arquivos de compilação:
+    CMD:
     ```bash
-    cmake ..
+    g++ -I include src/*.cpp -o programa && programa.exe
     ```
-3.  Compile o projeto:
+    Terminal (Mac / Linux)::
     ```bash
-    make
-    ```
-4.  Execute o programa:
-    ```bash
-    ./projeto_ed
+    g++ -I include src/*.cpp -o programa && ./programa
     ```
 
 ## ⚙️ Requisitos
 * Compilador C++ com suporte ao padrão **C++17** (GCC 7+, Clang 5+, ou MSVC 2017+).
-* CMake 3.10 ou superior.

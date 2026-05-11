@@ -13,9 +13,9 @@ public:
     Metrics copyMetrics() const;
 
     //Método 1: Busca Sequencial
-    void buscaSequencial(std::vector<int>& vetor, int valorBusca);
+    int buscaSequencial(std::vector<int>& vetor, int valorBusca);
     //Método 2: Busca Binária
-    void buscaBinaria(std::vector<int>& vetor, int valorBusca);
+    int buscaBinaria(std::vector<int>& vetor, int valorBusca);
 private:
     Metrics metrics_;
 

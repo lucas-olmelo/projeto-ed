@@ -15,12 +15,13 @@ int Searcher::buscaSequencial(vector<int>& vetor, int valorBusca){
     auto t0 = std::chrono::high_resolution_clock::now();
 
     int position = 0;
+    int result = -1;
     for (int v : vetor)
     {
         countComparison();
         if (v == valorBusca)
         {
-            return position;
+            result = position;
             break;
         }
         position++;
@@ -29,7 +30,7 @@ int Searcher::buscaSequencial(vector<int>& vetor, int valorBusca){
     auto t1 = std::chrono::high_resolution_clock::now();
     metrics_.timeNs = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
     
-    return -1;
+    return position;
 }
 
 int Searcher::buscaBinaria(vector<int>& vetor, int valorBusca){
@@ -37,7 +38,8 @@ int Searcher::buscaBinaria(vector<int>& vetor, int valorBusca){
     metrics_.auxMemBytes        = sizeof(int) + sizeof(bool) + 2 * sizeof(int);
     metrics_.maxRecursionDepth  = 0;
 
-    auto t0 = std::chrono::high_resolution_clock::now();    
+    auto t0 = std::chrono::high_resolution_clock::now();
+    int result = -1; 
 
     int left = 0, right = vetor.size() - 1;
     
@@ -46,7 +48,7 @@ int Searcher::buscaBinaria(vector<int>& vetor, int valorBusca){
         
         if (vetor[mid] == valorBusca) {
             countComparison();
-            return mid;
+            result = mid;
             break;
         }
         if (vetor[mid] < valorBusca) {
@@ -61,5 +63,5 @@ int Searcher::buscaBinaria(vector<int>& vetor, int valorBusca){
     auto t1 = std::chrono::high_resolution_clock::now();
     metrics_.timeNs = std::chrono::duration_cast<std::chrono::nanoseconds>(t1 - t0).count();
     
-    return -1;
+    return result;
 }

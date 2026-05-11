@@ -1,4 +1,5 @@
 #include "ExperimentRunner.h"
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 
@@ -21,14 +22,14 @@ Metrics ExperimentRunner::runSortExperiment(
         // 1. Gera o vetor para esta execução
         std::vector<int> vetor = gerador(tamanho);
 
-        // 3. Executa a ordenação
+        // 2. Executa a ordenação
         algoritmo(ordenador, vetor);
 
-        // 4. Coleta e acumula as métricas
+        // 3. Coleta e acumula as métricas
         Metrics metricaAtual = ordenador.copyMetrics();
 
-        // 5. Salva a execução individual no arquivo "bruto"
-        saveMetricsToCSV("metricas_todas_execucoes.csv", nomeAlgoritmo, nomeCenario, tamanho, metricaAtual, i + 1);
+        // 4. Salva a execução individual no arquivo "bruto"
+        saveMetricsToCSV("results/ordenacao/metricas_completa.csv", nomeAlgoritmo, nomeCenario, tamanho, metricaAtual, i + 1);
 
         mediaMetrics.comparisons += metricaAtual.comparisons;
         mediaMetrics.swaps += metricaAtual.swaps;
@@ -44,13 +45,13 @@ Metrics ExperimentRunner::runSortExperiment(
         }
     }
 
-    // 6. Calcula as médias
+    // 5. Calcula as médias
     mediaMetrics.comparisons /= numExecucoes;
     mediaMetrics.swaps /= numExecucoes;
     mediaMetrics.memAccesses /= numExecucoes;
     mediaMetrics.timeNs /= numExecucoes;
 
-    saveMetricsToCSV("metricas_medias.csv", nomeAlgoritmo, nomeCenario, tamanho, mediaMetrics);
+    saveMetricsToCSV("results/ordenacao/metricas_medias.csv", nomeAlgoritmo, nomeCenario, tamanho, mediaMetrics);
 
     std::cout << " [FINALIZADO]" << "\n";
 
@@ -76,7 +77,7 @@ Metrics ExperimentRunner::runSearchExperiment(
         algoritmo(searcher, vetorBase, valorBusca);
         Metrics atual = searcher.copyMetrics();
 
-        saveMetricsToCSV("metricas_busca_completa.csv", nomeAlgoritmo, nomeCenario, vetorBase.size(), atual, i + 1);
+        saveMetricsToCSV("results/busca/metricas_completa.csv", nomeAlgoritmo, nomeCenario, vetorBase.size(), atual, i + 1);
 
         mediaMetrics.comparisons += atual.comparisons;
         mediaMetrics.memAccesses += atual.memAccesses;
@@ -91,7 +92,7 @@ Metrics ExperimentRunner::runSearchExperiment(
     mediaMetrics.timeNs /= numExecucoes;
 
     // Salva a média
-    saveMetricsToCSV("metricas_busca_medias.csv", nomeAlgoritmo, nomeCenario, vetorBase.size(), mediaMetrics);
+    saveMetricsToCSV("results/busca/metricas_medias.csv", nomeAlgoritmo, nomeCenario, vetorBase.size(), mediaMetrics);
 
     std::cout << " [FINALIZADO]" << "\n";
 
@@ -106,6 +107,12 @@ void ExperimentRunner::saveMetricsToCSV(
     const Metrics& m,
     int execucaoId) 
 {
+    std::filesystem::path caminhoArquivo(nomeArquivo);
+    if (caminhoArquivo.has_parent_path()) {
+        // Cria a árvore de diretórios se ela não existir
+        std::filesystem::create_directories(caminhoArquivo.parent_path());
+    }
+
     std::ifstream checarArquivo(nomeArquivo);
     bool novoArquivo = !checarArquivo.is_open();
     checarArquivo.close();

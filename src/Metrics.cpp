@@ -18,5 +18,6 @@ void Metrics::print(const std::string& label) const {
                 << std::setw(22) << "  Trocas:"         << swaps                << "\n"
                 << std::setw(22) << "  Acessos mem.:"   << memAccesses          << "\n"
                 << std::setw(22) << "  Prof. recursao:" << maxRecursionDepth    << "\n"
-                << std::setw(22) << "  Mem. auxiliar:"  << auxMemBytes          << " bytes\n";
+                << std::setw(22) << "  Mem. auxiliar:"  << auxMemBytes          << " bytes\n"
+                << std::setw(22) << "  Tempo:"          << timeNs               << " ns\n";
 }

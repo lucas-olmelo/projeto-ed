@@ -84,8 +84,8 @@ int main() {
     std::cout << "=========================================\n";
 
     //Definição dos Tamanhos
-    //std::vector<int> tamanhos = {1000, 5000, 10000, 50000, 100000, 500000, 1000000};
-    std::vector<int> tamanhos = {1000, 5000, 10000}; //Versão para testes
+    std::vector<int> tamanhos = {1000, 5000, 10000, 50000, 100000, 500000, 1000000};
+    //std::vector<int> tamanhos = {1000, 5000, 10000}; //Versão para testes
 
     //LOOP DE ORDENAÇÃO
     for (int tamanho : tamanhos) {
